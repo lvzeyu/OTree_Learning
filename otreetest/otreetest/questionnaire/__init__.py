@@ -23,7 +23,7 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     q_gender = models.CharField(initial = None,
-                                choices = ['男性', '女性'],
+                                choices = ['男性', '女性', "回答しない"],
                                 verbose_name = 'あなたの性別を教えてください',
                                 widget = widgets.RadioSelect)
     # ラジオボタンを使うときはwidget = widgets.RadioSelectを記述する
@@ -49,6 +49,29 @@ class Player(BasePlayer):
                                             verbose_name = '解答端末を教えてください',
                                             widget = widgets.RadioSelect
                                             )
+    living_alone = models.StringField(
+
+        label='現在、一人暮らしですか？',
+
+        choices=[
+
+            ('はい', 'はい'),
+
+            ('いいえ', 'いいえ')
+
+        ]
+
+    )
+    
+    is_student = models.BooleanField(
+
+        label='あなたは学生ですか？',
+
+        widget=widgets.RadioSelect,
+
+        choices=[(True, 'はい'), (False, 'いいえ')]
+
+    )
 
 
 # PAGES
@@ -56,7 +79,7 @@ class Page1(Page):
     form_model = 'player'
     # 各フィールドはplayerクラスで定義されている
     form_fields = [
-        'q_gender','q_age','q_area','q_tanmatsu'
+        'q_gender','q_age','q_area','q_tanmatsu',"living_alone","is_student"
     ]
     # 質問項目は4つある
 
