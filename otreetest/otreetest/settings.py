@@ -1,11 +1,16 @@
 from os import environ
 
 SESSION_CONFIGS = [
-    # dict(
-    #     name='public_goods',
-    #     app_sequence=['public_goods'],
-    #     num_demo_participants=3,
-    # ),
+    dict(
+        name = 'questionaire',
+        # この構成の名前を設定します．
+        display_name = "はじめてのアンケート",
+        # oTreeのデモ画面で表示される名前を設定します
+        num_demo_participants = 1,
+        # デモ画面に参加する人数を設定しておく必要があります
+        app_sequence = ['questionnaire']
+        # この構成で使用するアプリケーションを設定します
+    )
 ]
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
@@ -22,7 +27,7 @@ SESSION_FIELDS = []
 
 # ISO-639 code
 # for example: de, fr, ja, ko, zh-hans
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'ja'
 
 # e.g. EUR, GBP, CNY, JPY
 REAL_WORLD_CURRENCY_CODE = 'USD'
