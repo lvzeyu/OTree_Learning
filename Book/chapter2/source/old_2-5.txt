@@ -1,0 +1,3 @@
+Created project folder.
+Enter "cd otreetest" to move inside the project folder, 
+then start the server with "otree devserver".

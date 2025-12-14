@@ -1,0 +1,7 @@
+class Page1(Page):
+    form_model = 'player'
+    # 各フィールドはplayerクラスで定義されている
+    form_fields = [
+        'q_gender','q_age','q_area','q_tanmatsu'
+    ]
+    # 質問項目は4つある

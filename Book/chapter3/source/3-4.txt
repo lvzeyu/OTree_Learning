@@ -1,0 +1,6 @@
+class C(BaseConstants):
+    NAME_IN_URL = 'questionnaire'
+    PLAYERS_PER_GROUP = None
+    # 1人の時はNoneと記述する
+    NUM_ROUNDS = 1
+    # 質問は1度だけ
