@@ -15,5 +15,8 @@ otree startapp questionnaire
 
 # __init__.pyの編集内容に合わせてsettings.pyを編集
 
+# 開発サーバーを起動
+# otree devserver
+
 
 
