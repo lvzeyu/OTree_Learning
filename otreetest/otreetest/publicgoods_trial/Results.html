@@ -1,10 +1,35 @@
 {{ block title }}
-    Page title
+    ゲーム結果
 {{ endblock }}
 
 {{ block content }}
-
-    {{ next_button }}
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">あなたのゲーム結果</h4>
+        <p>
+            あなたの貢献額: {{ player.contribution }}
+        </p>
+        <p>
+            グループの総貢献額: {{ group.total_contribution }}
+        </p>
+        <p>
+            各参加者のシェア: {{ group.individual_share }}
+        </p>
+        <p>
+            あなたの総報酬: {{ player.payoff }}
+        </p>
+        <p>
+            残ったポイント: {{ C.ENDOWMENT - player.contribution }}
+        </p>
+        <p>
+            シェアから受け取ったポイント: {{ group.individual_share }}
+        </p>
+        <p>
+            総報酬 = 残ったポイント + シェア = {{ C.ENDOWMENT - player.contribution }} + {{ group.individual_share }} = {{ player.payoff }}
+        </p>
+    </div>
+</div>
+{{ next_button }}
 {{ endblock }}
 
 

@@ -1,15 +1,41 @@
 {{ block title }}
-    説明&貢献額の決定
+    ゲームの説明と貢献額の決定
 {{ endblock }}
 
-
 {{ block content }}
-<p>
-    これは{{ C.PLAYERS_PER_GROUP }}人のプレイヤーによる公共財ゲームです．<br>
-    初期保有額は{{ C.ENDOWMENT }}であり，係数は{{ C.MULTIPLIER }}です．<br>
-    {{ C.PLAYERS_PER_GROUP }}人の貢献額の合計を{{ C.MULTIPLIER }}倍したポイントを
-    {{ C.PLAYERS_PER_GROUP }}で割ったものが各プレイヤーに返されます．<br>
-</p>
-    {{ formfields }}
-    {{ next_button }}
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">公共財ゲームの説明</h4>
+        <p>
+            このゲームは、{{ C.PLAYERS_PER_GROUP }}人の参加者で行います。各参加者は、初期に{{ C.ENDOWMENT }}ポイントを持っています。
+        </p>
+        <p>
+            ゲームの流れは以下の通りです：
+        </p>
+        <ol>
+            <li>各参加者は、自分のポイントの一部または全部を「公共財」に貢献します。貢献しないポイントは自分のものとして残ります。</li>
+            <li>全員の貢献額の合計を{{ C.MULTIPLIER }}倍したポイントが、公共財として作成されます。</li>
+            <li>この公共財は、{{ C.PLAYERS_PER_GROUP }}人の参加者で等しく分けられます。つまり、各参加者は公共財から等しいシェアを受け取ります。</li>
+        </ol>
+        <p>
+            <strong>報酬の計算例：</strong><br>
+            仮に{{ C.PLAYERS_PER_GROUP }}人が全員{{ C.ENDOWMENT }}ポイント貢献した場合：<br>
+            貢献額合計 = {{ C.PLAYERS_PER_GROUP }} × {{ C.ENDOWMENT }} = 60<br>
+            公共財 = 60 × {{ C.MULTIPLIER }} = 96<br>
+            各参加者のシェア = 96 ÷ {{ C.PLAYERS_PER_GROUP }} = 32<br>
+            各参加者の総報酬 = 残ったポイント + シェア = 0 + 32 = 32
+        </p>
+        <p>
+            貢献額を減らすと、自分の残りポイントは増えますが、公共財が減り、全員のシェアが減る可能性があります。貢献額を増やすと、自分の残りポイントは減りますが、公共財が増え、全員のシェアが増える可能性があります。
+        </p>
+        <p>
+            あなたの目標は、自分の総報酬を最大化することです。他の参加者の貢献額はわかりません。
+        </p>
+        <p>
+            以下のフォームで、あなたの貢献額を決定してください。0から{{ C.ENDOWMENT }}までの整数を入力してください。
+        </p>
+    </div>
+</div>
+{{ formfields }}
+{{ next_button }}
 {{ endblock }}

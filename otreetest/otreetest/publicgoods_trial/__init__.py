@@ -14,8 +14,8 @@ class C(BaseConstants):
     NAME_IN_URL = 'publicgoods_trial'
     PLAYERS_PER_GROUP = 3
     # 3人プレイヤー
-    NUM_ROUNDS = 5
-    # 1期のみ
+    NUM_ROUNDS = 10
+    # 10期繰り返し
     ENDOWMENT = cu(20)
     # 初期保有額は20ポイント
     MULTIPLIER = 1.6
@@ -62,21 +62,14 @@ def compute(group: Group):
         # 各プレイヤーのpayoffは初期保有額から貢献額を引いて各プレイヤーへの分配額を加えたものである
 
 
-#def creating_session(subsession: Subsession):
-#    if subsession.round_number == 1:
-#    # もし第1期なら
-#        subsession.group_randomly()
-        # ランダムにグループに割り当てる
-#    else:
- #       subsession.group_like_round(1)
-        # 1期目と同じグループに割り当てる
-
-
-
-
 def creating_session(subsession: Subsession):
-    subsession.group_randomly()
-    # ランダムにグループに割り当てる
+    if subsession.round_number == 1:
+    # もし第1期なら
+        subsession.group_randomly()
+        # ランダムにグループに割り当てる
+    else:
+        subsession.group_like_round(1)
+        # 1期目と同じグループに割り当てる
 
 
 
