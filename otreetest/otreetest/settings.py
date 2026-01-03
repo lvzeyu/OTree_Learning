@@ -1,15 +1,22 @@
 from os import environ
 
+
 SESSION_CONFIGS = [
     dict(
         name = 'questionaire',
-        # この構成の名前を設定します．
+        # この構成の名前を設定します
         display_name = "はじめてのアンケート",
         # oTreeのデモ画面で表示される名前を設定します
         num_demo_participants = 1,
         # デモ画面に参加する人数を設定しておく必要があります
         app_sequence = ['questionnaire']
         # この構成で使用するアプリケーションを設定します
+    ),
+    dict(
+        name = 'PG3',
+        display_name = "はじめての公共財ゲーム",
+        num_demo_participants = 3,
+        app_sequence = ['publicgoods_trial']
     )
 ]
 
