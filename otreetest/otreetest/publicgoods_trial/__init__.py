@@ -12,7 +12,7 @@ doc = """
 
 class C(BaseConstants):
     NAME_IN_URL = 'publicgoods_trial'
-    PLAYERS_PER_GROUP = 4
+    PLAYERS_PER_GROUP = 3
     # 3人プレイヤー
     NUM_ROUNDS = 10
     # 10期繰り返し
