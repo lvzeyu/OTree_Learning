@@ -15,7 +15,7 @@ SESSION_CONFIGS = [
     dict(
         name = 'PG3',
         display_name = "はじめての公共財ゲーム",
-        num_demo_participants = 3,
+        num_demo_participants = 7,
         app_sequence = ['publicgoods_trial']
     )
 ]
